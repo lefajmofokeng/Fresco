@@ -5,6 +5,8 @@
 ### Project Overview
 Fresco is an advanced, interactive portfolio component that demonstrates sophisticated front-end architecture patterns with a focus on state synchronization, image management, and responsive design. This component implements a dual-panel interface where project selection in an accordion panel dynamically updates a corresponding image gallery, creating an immersive portfolio browsing experience.
 
+<img width="1920" height="1138" alt="fresco" src="https://github.com/user-attachments/assets/283101bd-0fb4-4bd2-9a7c-f9fca320c37c" />
+
 ## Live Demo: 
 
 [Preview Demo](https://lefajmofokeng.github.io/Fresco)
