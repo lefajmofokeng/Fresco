@@ -16,7 +16,7 @@ Fresco implements a **Unidirectional Data Flow** architecture with centralized s
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    Component State                           │
+│                    Component State                          │
 ├─────────────────────────────────────────────────────────────┤
 │  • swActiveProjectIndex: Currently selected project         │
 │  • swActiveImageIndex: Currently active image in gallery    │
@@ -25,7 +25,7 @@ Fresco implements a **Unidirectional Data Flow** architecture with centralized s
          │
          ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                    Rendering Engine                          │
+│                    Rendering Engine                         │
 ├─────────────────────────────────────────────────────────────┤
 │  • swRenderComponent(): Orchestrates complete re-render     │
 │  • swRenderImages(): Handles image gallery updates          │
@@ -34,11 +34,11 @@ Fresco implements a **Unidirectional Data Flow** architecture with centralized s
          │
          ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                    UI Components                             │
+│                    UI Components                            │
 ├─────────────────────────────────────────────────────────────┤
-│  • Main Image Display (with fade transitions)              │
-│  • Thumbnail Gallery (with active state tracking)          │
-│  • Accordion Panel (with smooth height animations)         │
+│  • Main Image Display (with fade transitions)               │
+│  • Thumbnail Gallery (with active state tracking)           │
+│  • Accordion Panel (with smooth height animations)          │
 │  • Navigation Controls                                      │
 └─────────────────────────────────────────────────────────────┘
 ```
