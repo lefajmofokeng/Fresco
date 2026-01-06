@@ -1,0 +1,220 @@
+/* =========================================
+           CSS Isolation: Prefix 'sw-' used
+           ========================================= */
+
+        :root {
+            --sw-font-family: 'Inter Tight', sans-serif;
+            --sw-color-dark: #111111;
+            --sw-color-grey: #888888;
+            --sw-color-light-grey: #E5E5E5;
+            --sw-color-bg: #ffffff;
+            --sw-border-radius-lg: 24px;
+            --sw-border-radius-sm: 12px;
+        }
+
+        /* Reset for component wrapper */
+        .sw-component-wrapper {
+            box-sizing: border-box;
+            font-family: var(--sw-font-family);
+            background-color: var(--sw-color-bg);
+            color: var(--sw-color-dark);
+            padding: 60px 20px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .sw-component-wrapper * {
+            box-sizing: border-box;
+        }
+
+        /* --- Header Section --- */
+        .sw-header {
+            text-align: center;
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .sw-title {
+            font-size: 60px;
+            font-weight: 500;
+            margin: 0 0 24px 0;
+            letter-spacing: -0.02em;
+        }
+
+        .sw-subtitle {
+            font-size: 16px;
+            line-height: 1.5;
+            color: var(--sw-color-grey);
+            margin: 0;
+        }
+
+        /* --- Main Grid Layout --- */
+        .sw-content-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr; /* Left image column slightly wider */
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* --- Left Column (Images & Button) --- */
+        .sw-image-column {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .sw-main-image-wrapper {
+            width: 100%;
+            aspect-ratio: 4/3;
+            border-radius: var(--sw-border-radius-lg);
+            overflow: hidden;
+            background-color: var(--sw-color-light-grey); /* Placeholder color */
+        }
+
+        .sw-main-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Bottom row containing button and thumbnails */
+        .sw-image-footer-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .sw-browse-btn {
+            display: inline-block;
+            padding: 12px 32px;
+            border: 1px solid var(--sw-color-dark);
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--sw-color-dark);
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .sw-browse-btn:hover {
+            background-color: var(--sw-color-dark);
+            color: var(--sw-color-bg);
+        }
+
+        .sw-thumbnails-wrapper {
+            display: flex;
+            gap: 16px;
+        }
+
+        .sw-thumbnail {
+            width: 80px;
+            height: 80px;
+            border-radius: var(--sw-border-radius-sm);
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.2s ease;
+            padding: 2px; /* Space for border */
+        }
+
+        .sw-thumbnail.active {
+            border-color: var(--sw-color-dark);
+        }
+
+        .sw-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: calc(var(--sw-border-radius-sm) - 4px);
+            display: block;
+        }
+
+        /* --- Right Column (Accordion) --- */
+        .sw-accordion-column {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            padding-top: 20px; /* Alignment adjustment */
+        }
+
+        .sw-acc-item {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .sw-acc-header h3 {
+            font-size: 32px;
+            font-weight: 400;
+            margin: 0;
+            line-height: 1.2;
+            color: var(--sw-color-light-grey); /* Inactive state color */
+            transition: color 0.3s ease;
+            letter-spacing: -0.03em;
+        }
+
+        .sw-acc-content {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .sw-acc-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--sw-color-grey);
+            margin: 24px 0;
+            max-width: 90%;
+        }
+
+        .sw-plus-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #F3F3F3;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--sw-color-dark);
+            cursor: pointer;
+            padding-bottom: 4px; /* visual center adjustment */
+        }
+
+        /* Accordion Active State */
+        .sw-acc-item.active .sw-acc-header h3 {
+            color: var(--sw-color-dark);
+            font-weight: 500;
+        }
+
+        .sw-acc-item.active .sw-acc-content {
+            max-height: 500px; /* Arbitrary height large enough for content */
+            opacity: 1;
+        }
+
+
+        /* --- Responsiveness --- */
+        @media (max-width: 900px) {
+            .sw-content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sw-image-footer-row {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+             .sw-title {
+                font-size: 32px;
+            }
+             .sw-acc-header h3 {
+                 font-size: 24px;
+             }
+        }
