@@ -592,4 +592,3 @@ class Fresco {
 ---
 
 *Fresco demonstrates sophisticated component architecture with careful attention to performance, accessibility, and developer experience. The component serves as both a production-ready portfolio solution and an educational resource for advanced front-end component design patterns.*
- 
